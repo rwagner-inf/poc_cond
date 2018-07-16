@@ -5,7 +5,8 @@ matrix:
       before_script:
         - mvn clean install -Dmaven.test.skip=true
       script:
-        - docker build -t heimdall-api  ./heimdall/heimdall-api
+        - cd heimdall-api
+        - docker build -t heimdall-api  .
      
 
     - language: node_js
