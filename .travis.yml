@@ -7,6 +7,8 @@ matrix:
       script:
         - cd heimdall-api
         - docker build -t heimdall-api  .
+        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        - docker push $DOCKER_USERNAME/heimdall-api
      
 
     - language: node_js
@@ -19,5 +21,7 @@ matrix:
         - pwd
       script:
 
-        - docker build -t heimdall-frontend  .
+        - docker build -t frontend  .
+        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        - docker push $DOCKER_USERNAME/frontend
         #- docker build -t heimdall-api  ./heimdall/heimdall-api
