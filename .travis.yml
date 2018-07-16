@@ -4,6 +4,8 @@ matrix:
       jdk: oraclejdk8
       before_script:
         - mvn clean install -Dmaven.test.skip=true
+      script:
+        - docker build -t heimdall-api  ./heimdall/heimdall-api
      
 
     - language: node_js
@@ -12,8 +14,7 @@ matrix:
         - cd heimdall-frontend
         - npm install
         - npm build
-      
       script:
-        - cd ../
-        - docker build -t heimdall-api  ./heimdall/heimdall-api
+
+        - docker build -t heimdall-frontend  .
         #- docker build -t heimdall-api  ./heimdall/heimdall-api
