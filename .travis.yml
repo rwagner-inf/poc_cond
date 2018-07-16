@@ -17,3 +17,4 @@ matrix:
       script:
         - cd ../
         - docker build -t heimdall-api  ./heimdall/heimdall-api
+        #- docker build -t heimdall-api  ./heimdall/heimdall-api
