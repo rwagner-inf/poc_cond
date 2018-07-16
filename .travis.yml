@@ -14,7 +14,7 @@ matrix:
       before_script:
         - cd heimdall-frontend
         - npm install
-        - npm build
+        - npm run build
         - ls
         - pwd
       script:
