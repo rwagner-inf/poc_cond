@@ -25,12 +25,12 @@ services:
     ports:
     - 5433:5432/tcp
   heimdall-config:
-    build: ./heimdall-config
+    #build: ./heimdall-config
     image: poccond/heimdall-config:latest
     restart: always
     container_name: heimdall-config
   heimdall-api:
-    build: ./heimdall-api
+    #build: ./heimdall-api
     image: poccond/heimdall-api:latest
     environment:
     - SPRING_PROFILES_ACTIVE=docker
@@ -45,7 +45,7 @@ services:
     ports:
     - 9090:9090/tcp
   heimdall-gateway:
-    build: ./heimdall-gateway
+    #build: ./heimdall-gateway
     image: poccond/heimdall-gateway:latest
     restart: always
     container_name: heimdall-gateway
@@ -60,7 +60,7 @@ services:
     ports:
     - 8080:8080/tcp
   heimdall-frontend:
-    build: ./heimdall-frontend
+    #build: ./heimdall-frontend
     image: poccond/heimdall-frontend:latest
     restart: always
     container_name: heimdall-frontend
