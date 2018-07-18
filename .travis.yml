@@ -11,12 +11,12 @@ matrix:
         - docker push poccond/heimdall-api
 #Cofig
         - cd ../heimdall-config
-        - docker build -t $DOCKER_USERNAME/heimdall-config
+        - docker build -t $DOCKER_USERNAME/heimdall-config .
         - docker push poccond/heimdall-config
 #Gateway
 
         - cd ../heimdall-gateway
-        - docker build -t $DOCKER_USERNAME/heimdall-gateway
+        - docker build -t $DOCKER_USERNAME/heimdall-gateway .
         - docker push poccond/heimdall-gateway
         
     - language: node_js
