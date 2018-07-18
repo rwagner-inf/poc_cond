@@ -5,12 +5,19 @@ matrix:
       before_script:
         - mvn clean install -Dmaven.test.skip=true
       script:
+        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         - cd heimdall-api
         - docker build -t $DOCKER_USERNAME/heimdall-api  .
-        - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         - docker push poccond/heimdall-api
-     
-
+#Cofig
+        - cd ../heimdall-config
+        - docker build -t $DOCKER_USERNAME/heimdall-config
+        - docker push poccond/heimdall-config
+#Gateway
+        - cd ../heimdall-gateway
+        - docker build -t $DOCKER_USERNAME/heimdall-gateway
+        - docker push poccond/heimdall-gateway
+        
     - language: node_js
       node_js: "8"
       before_script:
