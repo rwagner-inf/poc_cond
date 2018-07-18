@@ -61,7 +61,7 @@ services:
     - 8080:8080/tcp
   heimdall-frontend:
     #build: ./heimdall-frontend
-    image: poccond/heimdall-frontend:latest
+    image: poccond/frontend:latest
     restart: always
     container_name: heimdall-frontend
     ports:
